@@ -6,6 +6,7 @@ metadata:
   name: nginx-ingress
   namespace: default
 spec:
+  releaseName: nginx-ingress
+  targetNamespace: default
   values:
-    controller:
-      service:
+    replicas: 1
