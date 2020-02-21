@@ -1,0 +1,12 @@
+#https://github.com/equinor/sdp-flux/blob/prod/prod/nginx-ingress/helm-release-patch.yaml
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress
+  namespace: infrastructure
+spec:
+  values:
+    controller:
+      service:
+        loadBalancerIP: 51.120.76.229
