@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: davidmcc/podinfo
-      tag: dev-vhysrtlx
+      tag: dev-uvzquwsg
     replicaCount: 1
     hpa:
       enabled: false
