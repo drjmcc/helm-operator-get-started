@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: microservice-sample
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:*
+spec:
+  releaseName: podinfo-dev
+  chart:
+    repository: s3://songtradr-ep-helm/charts 
+    name: microservice-sample
+    version: 0.1.0
+  values:
+    image:
+      repository: 934362615882.dkr.ecr.eu-west-1.amazonaws.com/microservice-sample
+      tag: e5263a82c5befe2adb03daae290386e72cb0f483
+    replicaCount: 1
+    hpa:
+      enabled: false
